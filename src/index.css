@@ -710,9 +710,9 @@
   transition: width 0.2s ease;
 }
 
-.scroll-indicator:hover::after {
+/* .scroll-indicator:hover::after {
   width: 100%;
-}
+} */
 
 /* Add new animation keyframes */
 @keyframes subtle-pulse {
@@ -824,4 +824,9 @@
 .premium-glow:hover {
   transform: none;
   box-shadow: none;
+}
+
+.glass-effect:hover, .card:hover {
+  border: 1px solid #fff !important;
+  transition: border 0.2s;
 }

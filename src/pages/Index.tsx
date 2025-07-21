@@ -41,18 +41,6 @@ const Index = () => {
       <Skills />
       <Projects />
       <Uses />
-      <div className="flex flex-col items-center justify-center px-6 py-24 mx-auto max-w-7xl">
-        <h2 className="section-heading text-center mb-12">Connect and Fun</h2>
-        <div className="section-divider mb-12"></div>
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-12 w-full">
-          <div className="w-full lg:w-1/2">
-            <RecentFavorite />
-          </div>
-          <div className="w-full lg:w-1/2">
-            <ChessPlaying />
-          </div>
-        </div>
-      </div>
       <Testimonials />
       <Contact />
     </main>

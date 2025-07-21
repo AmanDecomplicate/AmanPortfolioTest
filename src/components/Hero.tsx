@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { Button } from '@/components/ui/button';
 import { FolderOpen, ChevronDown, ArrowRight } from 'lucide-react';
 
-const Hero = () => {
+const Hero = memo(() => {
   const [displayedText, setDisplayedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -94,9 +94,8 @@ const Hero = () => {
       </div>
       
       {/* Floating orbs with aria-hidden */}
-      <div className="absolute top-1/4 left-1/4 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-primary/10 rounded-full blur-3xl animate-float" aria-hidden="true"></div>
+      <div className="absolute top-1/4 left-1/4 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-primary/10 rounded-full blur-3xl animate-float" aria-hidden="true" style={{ willChange: 'transform' }}></div>
       <div className="absolute bottom-1/4 right-1/4 w-40 sm:w-60 md:w-80 h-40 sm:h-60 md:h-80 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} aria-hidden="true"></div>
-      <div className="absolute top-1/2 right-1/3 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-primary/5 rounded-full blur-2xl animate-float" style={{ animationDelay: '4s' }} aria-hidden="true"></div>
       
       <div className="relative z-10 text-center max-w-6xl mx-auto">
         <div className={`transition-all duration-1000 ${showContent ? 'animate-slide-in-up' : 'opacity-0 translate-y-10'}`}>
@@ -161,7 +160,7 @@ const Hero = () => {
           >
             <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 font-medium scroll-indicator">Discover my work</p>
             <button 
-              className="inline-block animate-bounce hover:scale-110 transition-transform duration-300 hover-lift" 
+              className="inline-block animate-bounce transition-transform duration-300" 
               onClick={scrollToAbout}
               aria-label="Scroll to about section"
             >
@@ -174,6 +173,6 @@ const Hero = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Hero;
